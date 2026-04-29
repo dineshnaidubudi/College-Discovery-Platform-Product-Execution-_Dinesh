@@ -1,0 +1,99 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  name          String?
+  passwordHash  String?
+  savedColleges SavedCollege[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model College {
+  id                  String          @id @default(cuid())
+  name                String
+  slug                String          @unique
+  location            String
+  city                String
+  state               String
+  annualFee           Int
+  rating              Float
+  placementPercentage Float
+  averagePackage      Float
+  description         String
+  imageUrl            String?
+  courses             Course[]
+  reviews             Review[]
+  predictorRules      PredictorRule[]
+  savedBy             SavedCollege[]
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+
+  @@index([name])
+  @@index([city])
+  @@index([state])
+  @@index([annualFee])
+  @@index([rating])
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  collegeId   String
+  college     College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  name        String
+  duration    String
+  fee         Int
+  eligibility String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([collegeId])
+  @@index([name])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  collegeId  String
+  college    College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  authorName String
+  rating     Float
+  comment    String
+  createdAt  DateTime @default(now())
+
+  @@index([collegeId])
+}
+
+model PredictorRule {
+  id        String  @id @default(cuid())
+  collegeId String
+  college   College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  exam      String
+  course    String
+  minRank   Int
+  maxRank   Int
+
+  @@index([exam])
+  @@index([course])
+  @@index([minRank, maxRank])
+  @@index([collegeId])
+}
+
+model SavedCollege {
+  id        String   @id @default(cuid())
+  userId    String
+  collegeId String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, collegeId])
+  @@index([collegeId])
+}
