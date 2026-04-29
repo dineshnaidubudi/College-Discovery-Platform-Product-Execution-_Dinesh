@@ -1,0 +1,279 @@
+Full Stack Developer Internship - Demo Task
+🎯 Objective
+Build a production-grade, end-to-end system.
+You must choose ONE track only:
+Track A → AI App Generator (Hard / High Signal) 
+Track B → College Discovery Platform (Product Build) 
+👉 Your selection will NOT affect evaluation negatively.
+ 👉 We are evaluating depth, ownership, and execution quality within your chosen track.
+🛣️ Choose Your Track
+
+🧠 Track A: AI App Generator (Advanced / Systems Thinking)
+Build a system that converts structured configuration (JSON) into a fully working, deployed web application (frontend + backend + database).
+This should behave like a mini app generator, not a single hardcoded app.
+Reference - https://base44.com/ 
+Submission Link - https://forms.gle/Z11CsDNWzhA4fwHm6 
+
+
+🧩 Problem Statement
+You will work with structured configurations (JSON) that define:
+UI (forms, dashboards, tables)
+APIs (endpoints, actions)
+Database structure
+Authentication
+These configurations may be:
+incomplete
+inconsistent
+partially incorrect
+Your system must still work reliably under these conditions.
+
+🚀 What You Need to Build
+1. Dynamic Application Runtime (Core)
+Build a system that:
+Reads JSON configuration
+Dynamically generates:
+UI (forms, tables, dashboards)
+Backend APIs
+Database structure
+⚠️ This must NOT be hardcoded.
+
+2. Frontend
+Use React.js (Next.js preferred)
+Render UI dynamically from config
+Handle:
+missing fields
+unknown components
+Include:
+loading states
+error states
+
+3. Backend
+Use Node.js (TypeScript preferred)
+Generate APIs dynamically
+Implement:
+validation layer
+error handling
+CRUD operations
+
+4. Database
+Use PostgreSQL (preferred)
+Store and retrieve application data
+Handle:
+optional fields
+schema mismatches
+
+5. Authentication
+Implement basic auth (email/password or equivalent)
+Ensure user-scoped data access
+
+6. Extensibility (Important)
+Your system should allow:
+adding new UI components easily
+extending features without rewriting core logic
+⚠️ Rigid systems will be considered weak.
+
+7. Feature Implementation (Build ANY 3 — Mandatory)
+You must implement at least 3 features from the list below.
+These should be:
+fully functional (end-to-end)
+integrated into your system (not isolated hacks)
+working with your config-driven architecture
+
+🧩 Platform & App Capabilities
+Multi-language / Localization
+Multi-language UI support
+Dynamic switching via config or user
+Mobile-ready experience
+Fully responsive apps
+(Bonus: PWA / installable)
+
+🔌 Integrations & Ecosystem
+Export full codebase to GitHub
+Generate project structure
+Push to repository
+CSV Import System
+Upload → map → store → render
+Post-creation integrations
+Ability to add features after app is generated
+
+🔐 Authentication & User Management
+Multiple login methods
+Email/password + one additional method
+Customizable auth UI
+Config-driven login/signup
+User-scoped data access
+
+🔔 Notifications & Communication
+Event-based notifications
+Trigger on user/system actions
+Email system (basic)
+Transactional emails (mock acceptable)
+
+⚠️ Feature Expectations
+Must work within your system, not standalone
+Should be config-driven where possible
+Must handle edge cases and failures
+
+8. Deployment (Mandatory)
+Deploy a fully working system
+Ensure end-to-end usability
+
+🧪 What We Will Test
+We will:
+modify your configuration
+add/remove fields
+introduce edge cases
+Your system should not break under these conditions.
+
+📤 Submission (Mandatory)
+Submit via Google Form (link will be provided):
+Live URL (working product)
+GitHub repository
+Loom video (5-10 min) explaining:
+architecture
+decisions taken
+edge cases handled
+tradeoffs
+
+⚠️ Important Instructions
+You are expected to figure things out independently
+You may use any tools (Cursor, ChatGPT, Claude, etc.)
+Focus on building a working system, not perfect code
+If your system breaks under real usage, it will be rejected
+
+🧠 Evaluation Focus
+We are evaluating your ability to:
+build reliable systems from imperfect inputs
+design for extensibility and change
+handle real-world edge cases
+ship a complete, working product
+implement deep, integrated features (not superficial)
+
+
+
+
+
+🏗️ Track B: College Discovery Platform (Product Execution)
+Inspired by: https://www.careers360.com/ https://collegedunia.com/ 
+
+🎯 Objective
+Build a production-grade MVP of a college discovery + decision platform.
+You are NOT required to build everything.
+👉 You MUST:
+Review the feature list below
+Pick ANY 3–4 features
+Build them end-to-end (frontend + backend + DB + deploy)
+
+🧩 Feature List (Choose 3–4)
+1. 🔍 College Listing + Search
+Build a listing page with:
+College cards:
+Name
+Location
+Fees
+Rating
+Search by college name
+Filter (any 2):
+Location
+Fees
+Course
+👉 Expectation:
+Fast, usable UI (not static dump)
+Pagination or infinite scroll
+
+2. 🏫 College Detail Page
+Build a detail page with:
+Overview:
+Fees
+Courses offered
+Basic info
+Sections (at least 2):
+Courses
+Placements
+Reviews (mock allowed)
+👉 Expectation:
+Clean layout
+Proper routing (Next.js preferred)
+
+3. ⚖️ Compare Colleges (HIGH PRIORITY FEATURE)
+Build:
+Select 2–3 colleges
+Show comparison table:
+Fees
+Placement %
+Rating
+Location
+👉 This is a decision feature, not UI feature
+
+4. 🧠 Simple Predictor Tool
+Build:
+Input:
+Exam (e.g., JEE)
+Rank
+Output:
+List of colleges
+👉 Logic:
+Can be rule-based or dataset-driven
+
+5. 💬 Q&A / Discussion
+Build:
+Ask question
+Answer question
+List view of questions
+👉 Keep it simple but functional
+
+6. 🔐 Auth + Saved Items
+Build:
+Login system
+Save:
+Colleges
+Comparisons
+
+⚠️ What You MUST Do
+1. End-to-End Build
+Frontend + Backend + Database
+No partial work
+2. Real Data Handling
+Use:
+Mock dataset OR AI-generated dataset
+But:
+Store in DB
+No hardcoding everything in UI
+3. Deployment (MANDATORY)
+Frontend → Vercel (or similar)
+Backend → Railway / Render (or similar)
+Live working URL required
+
+🧱 Tech Requirements (Strict)
+Frontend:
+React.js or Next.js
+Tailwind CSS
+Backend:
+Node.js (TypeScript preferred)
+REST APIs
+Database:
+PostgreSQL (preferred)
+
+🤖 AI Usage
+You are encouraged to use:
+OpenAI
+Anthropic
+Cursor, ChatGPT, etc.
+
+⚠️ Important Note
+This task is intentionally challenging.
+We have designed it to create a steep learning curve and to identify people who can operate with high ownership and high agency.
+You are not expected to know everything beforehand.
+But you are expected to:
+figure things out independently
+navigate ambiguity
+make decisions without waiting for instructions
+push through technical and product challenges
+This is not a typical internship assignment.
+It reflects the kind of problems you will work on here.
+If you’re someone who enjoys:
+building from scratch
+solving unclear problems
+taking full ownership
+you will find this exciting.
+If you prefer structured, step-by-step tasks, this may not be the right fit.
